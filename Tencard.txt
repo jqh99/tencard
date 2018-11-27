@@ -1,0 +1,66 @@
+1、用户模块  用户名+id号，密码，点赞列表，冻结者，卡片列表（最多十张，可以删，不可修改），私信（发，收）
+2、卡片模块，主题格式，查看次数，点赞次数。
+3、文字输入
+4、卡片星空
+5、冻结
+
+
+表：
+用户user
+id,name,password,is_freeze,freezer_id,freezer_count
+create table user
+(
+  id            bigint auto_increment
+    primary key,
+  username      varchar(20)     not null,
+  name          varchar(50)     not null,
+  password      varchar(100)     not null,
+  is_freeze     int default '0' not null,
+  freezer_id    bigint          null,
+  freezer_count int default '0' not null,
+  remember_token varchar(100)
+);
+
+卡片表card
+id,user_id,content,theme_id,like_count,view_count
+CREATE TABLE card
+(
+    id bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id bigint NOT NULL,
+    content varchar(500) NOT NULL,
+    theme_id int NOT NULL,
+    like_count int DEFAULT 0 NOT NULL,
+    view_count int DEFAULT 0 NOT NULL
+);
+
+卡片主题theme
+id,name,class
+CREATE TABLE them
+(
+    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name varchar(20) NOT NULL,
+    class varchar(20) NOT NULL
+);
+
+私信msg
+id,from_user_id,to_user_id,is_read,send_time
+CREATE TABLE msg
+(
+    id bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    from_user_id bigint NOT NULL,
+    to_user_id bigint NOT NULL,
+    is_read int DEFAULT 0 NOT NULL,
+    send_time int NOT NULL
+);
+
+点赞关系表card_to_like_user
+id,user_id,card_id
+CREATE TABLE card_to_like_user
+(
+    id bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id bigint NOT NULL,
+    card_id bigint NOT NULL
+);
+
+
+
