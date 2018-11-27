@@ -35,7 +35,7 @@ CREATE TABLE card
 
 卡片主题theme
 id,name,class
-CREATE TABLE them
+CREATE TABLE theme
 (
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name varchar(20) NOT NULL,
