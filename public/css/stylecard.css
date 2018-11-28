@@ -33,6 +33,12 @@ body a,form li,.submit input[type="submit"]{
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
 }
+body a,form li,.button input[type="button"]{
+    transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -o-transition: 0.1s all;
+}
 body h1 {
   color: #fff;
   text-align: center;
@@ -141,6 +147,29 @@ input[type="submit"]:hover{
   -o-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
 }
+.login-01 input[type="button"]{
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 10px;
+    width: 25%;
+    border: 2px solid #F79D29;
+    float: right;
+    background: #F79D29;
+    border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    margin-right:2.85em;
+}
+input[type="button"]:hover{
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+    -o-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+}
 li.lost {
   margin-bottom: 21px;
 }
@@ -165,12 +194,18 @@ li.lost {
   .login-01 input[type="submit"]{
   margin-right:1.85em;
   }
+    .login-01 input[type="button"]{
+        margin-right:1.85em;
+    }
 	
 }
 @media (max-width:1366px){
   .login-01 input[type="submit"]{
   margin-right: 1.6em;
   }
+    .login-01 input[type="button"]{
+        margin-right: 1.6em;
+    }
   	
 }
 @media (max-width:1280px){
@@ -319,6 +354,12 @@ li.second:hover .msg {
   width: 36%;
   margin-right: 0.7em;
 }
+    .login-01 input[type="button"] {
+        font-size: 17px;
+        padding: 8px 8px;
+        width: 36%;
+        margin-right: 0.7em;
+    }
 body h1 {
   font-size:1.6em;
 }

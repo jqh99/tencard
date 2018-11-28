@@ -111,5 +111,97 @@ canvas{
 .login.active{-webkit-animation: login-small 0.8s ; animation: login-small 0.8s ;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
 .login-button{cursor: pointer;width: 250px;text-align: center;height: 40px;line-height: 40px;background-color: dodgerblue;border-radius: 5px;margin: 0 auto;margin-top: 50px;color: white;}
 
-.head{margin:0 auto;width:80%;height:100px; text-align: right;padding-top: 10px; }
+.head{margin:0 auto;width:80%;height:30px; text-align: right;padding-top: 10px; }
 .head,.head a{color:white;font-size:1em;}
+
+
+/*头部导航样式*/
+.nav {
+    position: relative;
+    /*background-color: #fff;*/
+    height: 78px;
+    width: 100%;
+    border-bottom: 1px solid #DADADA;
+    z-index: 100;
+}
+
+.nav img {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 28px;
+    display: none;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav ul li {
+    height: 78px;
+    width: 168px;
+    line-height: 78px;
+    text-align: center;
+    display: inline-block;
+}
+
+.nav ul li:hover {
+    cursor: pointer;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #e2e3ff;
+    padding-bottom: 8px;
+}
+
+.nav ul li .actived {
+    border-bottom: 3px solid #eecfaf;
+}
+
+/*屏幕宽度小于878px的时候执行里面的css*/
+
+@media only screen and (max-width: 878px) {
+    .nav{
+        height:10px;
+    }
+    .nav img {
+        display: inline;
+        position: fixed;
+        top: 40px;
+        right:0px;
+    }
+    .nav ul {
+        position: fixed;
+        right: 0;
+        text-align: right;
+        top: 68px;
+        display: none;
+        z-index: 100;
+        background: #000;
+    }
+    .nav ul li {
+        display: block;
+        border-bottom: 1px solid #2e352b;
+        height: 58px;
+        line-height: 58px;
+        width: 98px;
+    }
+    .nav ul li a {
+        display: block;
+        padding-bottom: 0;
+    }
+    .nav ul li .actived {
+        border-bottom: none;
+    }
+    .nav ul li a:hover {
+        background-color: #2e352b;
+        color: #fff;
+    }
+}
+/*头部导航样式*/
+
+

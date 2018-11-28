@@ -1680,5 +1680,4 @@ input[type="submit"] {
 }
 /*--media quries end here--*/
 .weibai{color:#fcaf81;}
-.legend {text-align: center;height:30px;}
-.legend a{ color:#fcaf81;font-size: 1.8em;}
+.legend {text-align: center;height:30px; margin-top: 20px;}

@@ -50,7 +50,8 @@ CREATE TABLE msg
     from_user_id bigint NOT NULL,
     to_user_id bigint NOT NULL,
     is_read int DEFAULT 0 NOT NULL,
-    send_time int NOT NULL
+    send_time int NOT NULL,
+	content text NOT NULL
 );
 
 点赞关系表card_to_like_user

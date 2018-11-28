@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@index');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -27,4 +25,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('card/add','CardController@addCard');
     Route::post('card/add','CardController@saveCard');
     Route::get('card/list','CardController@cardList');
+
+    Route::get('msg/add','MemberController@addMsg');
+    Route::post('msg/add','MemberController@saveMsg');
+    Route::get('msg/list','MemberController@msgList');
+    Route::post('msg/getlist','MemberController@getMsgList');
 });
+Route::post('card/like','CardController@likeCard');

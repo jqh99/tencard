@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Psy\Exception\ErrorException;
+use Auth;
 
 class CardController extends Controller
 {
@@ -35,5 +37,47 @@ class CardController extends Controller
         return view('card/list',[
             'cards'=>$cards
         ]);
+    }
+
+    public function likeCard(){
+        if (!Auth::check()) {
+            return json_encode([
+                'status'=>0,
+                "msg"=>"请您先登录！"
+            ]);
+        }
+        $id = request()->get('card_id');
+        $is_like = DB::table('card_to_like_user')
+            ->where('user_id',request()->user()->id)
+            ->where('card_id',$id)
+            ->count();
+        if($is_like>0){
+            return json_encode([
+               'status'=>0,
+               "msg"=>"您已经为Ta的这份经典，贡献过宝贵力量！"
+            ]);
+        }else{
+            try{
+                DB::transaction(function () use($id){
+
+                    DB::table('card')->where('id',$id)->increment('like_count');
+                    DB::table('card_to_like_user')->insert([
+                        'user_id'=>request()->user()->id,
+                        'card_id'=>$id
+                    ]);
+                });
+
+            }catch (ErrorException $e){
+                return json_encode([
+                    'status'=>0,
+                    "msg"=>"服务器忙，请稍后重试！"
+                ]);
+            }
+            return json_encode([
+                'status'=>1,
+                "msg"=>"恭喜您，为经典流传，再次贡献了一份宝贵力量！"
+            ]);
+
+        }
     }
 }
