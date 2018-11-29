@@ -20,4 +20,8 @@ class IndexController extends Controller
             'cards'=>$cards
         ]);
     }
+
+    public function about(){
+        return view('html/about');
+    }
 }

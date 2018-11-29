@@ -1681,7 +1681,7 @@ input[type="submit"] {
 /*--media quries end here--*/
 .weibai{color:#fcaf81;}
 .part{padding: 15px;}
-.msgsbg{}
+.msgsbg{ }
 .part .l_h,.part .l_c{float:left;}
 .part .r_h,.part .r_c{float:right; text-align: right;}
 .part .l_h,.part .r_h{ color:#d2d2d2; font-size: 1em;line-height: 1.5em; width:100%;}

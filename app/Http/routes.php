@@ -35,3 +35,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('msg/getdetaillist','MemberController@getMsgDetailList');
 });
 Route::post('card/like','CardController@likeCard');
+Route::get('about','IndexController@about');

@@ -24,6 +24,9 @@
         <li>
             <a href="/msg/list" @if(strstr(request()->path(), 'msg/list') || strstr(request()->path(), 'msg/detail')) class="actived" @endif>我的私信</a>
         </li>
+        <li>
+            <a href="/about" @if(strstr(request()->path(), 'about')) class="actived" @endif>关于</a>
+        </li>
     </ul>
     <img src="/img/more_black.jpg" />
 </div>

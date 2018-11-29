@@ -100,11 +100,12 @@
                                 tmp_html += '<div class="clearfix"> </div>';
                                 tmp_html += '</div>';
                             }
-                            html = tmp_html+html;
+                            $(".info-grid-main").prepend($(tmp_html));
+                            // html = tmp_html+html;
                             tmp_html="";
 
                         });
-                        $(".info-grid-main").prepend($(html));//写入页面
+                        // $(".info-grid-main").prepend($(html));//写入页面
                     }
                 },
             });
