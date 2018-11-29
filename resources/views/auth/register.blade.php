@@ -11,6 +11,15 @@
             <div class="login-top">
                 注册
             </div>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form id="loginForm" method="POST" action="/auth/register">
                 {!! csrf_field() !!}
                 <div class="login-center clearfix">
