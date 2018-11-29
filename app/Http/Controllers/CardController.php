@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-use Psy\Exception\ErrorException;
 use Auth;
 
 class CardController extends Controller
@@ -67,7 +67,7 @@ class CardController extends Controller
                     ]);
                 });
 
-            }catch (ErrorException $e){
+            }catch (QueryException $e){
                 return json_encode([
                     'status'=>0,
                     "msg"=>"服务器忙，请稍后重试！"
@@ -79,5 +79,19 @@ class CardController extends Controller
             ]);
 
         }
+    }
+
+    public function cardDel($id){
+        try{
+            DB::transaction(function () use($id){
+
+                DB::table('card')->where('id',$id)->where('user_id',request()->user()->id)->delete();
+                DB::table('card_to_like_user')->where('card_id',$id)->delete();
+            });
+
+        }catch (QueryException $e){
+
+        }
+        return redirect('/card/list');
     }
 }

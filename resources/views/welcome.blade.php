@@ -86,7 +86,7 @@
                     //alert('error');
                 },
                 success:function(data){
-                    // data = JSON.parse(data);
+                    data = JSON.parse(data);
                     layer.msg(data.msg);
                     if(data.status != 1){
                         obj.html('为Ta点赞（'+parseInt(like_count)+'）');

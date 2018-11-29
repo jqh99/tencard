@@ -25,10 +25,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('card/add','CardController@addCard');
     Route::post('card/add','CardController@saveCard');
     Route::get('card/list','CardController@cardList');
+    Route::get('card/delete/{id}','CardController@cardDel');
 
     Route::get('msg/add','MemberController@addMsg');
     Route::post('msg/add','MemberController@saveMsg');
     Route::get('msg/list','MemberController@msgList');
+    Route::get('msg/detail/{from_user_id}','MemberController@msgDetail');
     Route::post('msg/getlist','MemberController@getMsgList');
+    Route::post('msg/getdetaillist','MemberController@getMsgDetailList');
 });
 Route::post('card/like','CardController@likeCard');

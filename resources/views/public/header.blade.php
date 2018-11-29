@@ -1,24 +1,28 @@
 <div class="head">
     @if(request()->user())
-        欢迎,{{ request()->user()->name }}
         <a href="/auth/logout">退出</a>
+        <span> | </span>
+        <span>{{ request()->user()->name }}</span>
+
 
     @else
-        <a href="/auth/register">注册</a>
         <a href="/auth/login">登录</a>
+        <span> | </span>
+        <a href="/auth/register">注册</a>
+
     @endif
 
 </div>
 <div class="nav">
     <ul>
         <li>
-            <a href="/" class="actived">经典星空</a>
+            <a href="/" @if(request()->path() == '/') class="actived" @endif>经典星空</a>
         </li>
         <li>
-            <a href="/card/list">我的经典</a>
+            <a href="/card/list" @if(strstr(request()->path(), 'card/list')) class="actived" @endif>我的经典</a>
         </li>
         <li>
-            <a href="/msg/list">我的私信</a>
+            <a href="/msg/list" @if(strstr(request()->path(), 'msg/list') || strstr(request()->path(), 'msg/detail')) class="actived" @endif>我的私信</a>
         </li>
     </ul>
     <img src="/img/more_black.jpg" />

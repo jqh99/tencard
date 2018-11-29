@@ -24,7 +24,12 @@
                 @foreach($cards as $item)
                 <div class="col-md-4 info-grids-cr wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
                     <div class="info-top">
-                        <h3><span style="color:red">获赞数（{{ $item->like_count }}）</span> </h3>
+                        <h3>
+                            <span style="color:red">获赞数（{{ $item->like_count }}）</span>
+                            <button class="delcard layui-btn layui-btn-sm layui-btn-primary" data-id="{{ $item->id }}">
+                                <i class="layui-icon">&#xe640;</i>
+                            </button>
+                        </h3>
                     </div>
                     <div class="info-bott">
                         {{--<img src="/images/c1.jpg" alt="">--}}
@@ -45,5 +50,14 @@
     <!--info-grid end here-->
 @endsection
 @section('js')
-
+<script type="text/javascript">
+    $(function () {
+       $('.delcard').click(function () {
+           if(confirm('确定要删除吗？')){
+               var id=$(this).attr('data-id');
+               location.href='/card/delete/'+id;
+           }
+       });
+    });
+</script>
 @endsection

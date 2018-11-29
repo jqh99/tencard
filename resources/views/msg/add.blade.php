@@ -37,7 +37,7 @@
                         //alert('error');
                     },
                     success:function(data){
-                        // data = JSON.parse(data);
+                        data = JSON.parse(data);
                         layer.msg(data.msg, { shift: -1 }, function () {
                             if(data.status == 1){
                                 var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引

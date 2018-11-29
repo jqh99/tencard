@@ -149,7 +149,7 @@ span.menu{
 .info-bott {
 	background: url(../images/d-middle.jpg)0px 0px;
 	padding: 1em 1em;
-	min-height: 320px;
+	/*min-height: 320px;*/
 	text-align: center;
 }
 .info-bott p {
@@ -1084,7 +1084,7 @@ ul.res li a:hover,ul.res li a.active{
 	height: 34px;
 }
 .info-bott {
-	min-height: 250px;
+	/*min-height: 250px;*/
 }
 .ser-midd {
 	margin: 0px 23px;
@@ -1680,4 +1680,10 @@ input[type="submit"] {
 }
 /*--media quries end here--*/
 .weibai{color:#fcaf81;}
-.legend {text-align: center;height:30px; margin-top: 20px;}
+.part{padding: 15px;}
+.msgsbg{}
+.part .l_h,.part .l_c{float:left;}
+.part .r_h,.part .r_c{float:right; text-align: right;}
+.part .l_h,.part .r_h{ color:#d2d2d2; font-size: 1em;line-height: 1.5em; width:100%;}
+.part .l_c,.part .r_c{ color:#10da32;max-width: 70%; font-size: 1em;line-height: 1.5em; background:#000000;padding: 10px;border-radius: 5px;}
+

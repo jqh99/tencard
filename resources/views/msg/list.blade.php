@@ -76,7 +76,7 @@
                             html += '<div class="info-bott">';
                             html += '<h5 style="text-align: left;">来自：'+item.name+'</h5>';
                             html += '<p>'+ item.content +'</p>';
-                            html += '<button class="sendmsg layui-btn layui-btn-normal" data-userid="'+item.from_user_id+'" data-username="'+item.name+'">回复Ta</button>';
+                            html += '<a class="layui-btn layui-btn-normal" href="/msg/detail/'+item.from_user_id+'">查看</a>';
                             html += '</div>';
                             html += '<br/>';
                             html += '</div>';
@@ -86,42 +86,5 @@
                 },
             });
         }
-
-        $("#msgs").on("click",".sendmsg",function(){
-            var docW = window.screen.width;
-            if(docW < 1920){
-                var layerW = '80%';
-                var layerH = '70%';
-            }else{
-                var layerW = '500px';
-                var layerH = '500px';
-            }
-            var id=$(this).attr('data-userid');
-            $("#touser").val(id);
-            var name = $(this).attr('data-username');
-            //iframe窗
-            layer.open({
-                type: 2,
-                title: false,
-                closeBtn: 0, //不显示关闭按钮
-                shade: [0],
-                area: ['40px', '30px'],
-                offset: 'rb', //右下角弹出
-                time: 2000, //2秒后自动关闭
-                anim: 2,
-                content: ['/msg/add', 'no'], //iframe的url，no代表不显示滚动条
-                end: function(){ //此处用于演示
-                    layer.open({
-                        type: 2,
-                        title: '回信：'+name,
-                        shadeClose: true,
-                        shade: false,
-                        maxmin: true, //开启最大化最小化按钮
-                        area: [layerW, layerH],
-                        content: '/msg/add'
-                    });
-                }
-            });
-        });
     </script>
 @endsection
