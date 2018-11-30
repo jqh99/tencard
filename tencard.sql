@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2018-11-27 16:26:42
+Date: 2018-11-30 16:46:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,13 +28,7 @@ CREATE TABLE `card` (
   `view_count` int(11) NOT NULL DEFAULT '0',
   `create_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of card
--- ----------------------------
-INSERT INTO `card` VALUES ('1', '1', '人生如戏，若得嬉笑怒骂，当可超然！', '1', '0', '0', '1543301541');
-INSERT INTO `card` VALUES ('2', '1', '天之道，损有余而补不足！\r\n人之道，损不足而奉有余！', '1', '0', '0', '1543303224');
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for card_to_like_user
@@ -45,11 +39,7 @@ CREATE TABLE `card_to_like_user` (
   `user_id` bigint(20) NOT NULL,
   `card_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of card_to_like_user
--- ----------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for msg
@@ -61,12 +51,9 @@ CREATE TABLE `msg` (
   `to_user_id` bigint(20) NOT NULL,
   `is_read` int(11) NOT NULL DEFAULT '0',
   `send_time` int(11) NOT NULL,
+  `content` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of msg
--- ----------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for theme
@@ -78,10 +65,6 @@ CREATE TABLE `theme` (
   `class` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of theme
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for user
@@ -97,10 +80,4 @@ CREATE TABLE `user` (
   `freezer_count` int(11) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('1', 'jqh', '江大聪', '$2y$10$ln3pUbHt6UlctKMZddGAJudV0bcHMuEuwh/A4JJlZCW4fb2xGCmdC', '0', null, '0', 'oGzqeT7nQaNcDOpy6YPStPeGGzhLtKY9xzS2stcGHzx7TM3BEFenNd6xhp4q');
-INSERT INTO `user` VALUES ('2', 'jqh', '江神州', '$2y$10$1zkNdEVZv6iFI31R18kPxeLM/mqUCdyVMUoXPlLRmie9UoXFH1slS', '0', null, '0', '8n6mbKnOtuaUu7yKnleizimuS9EGpDDdsf97WcsvGbb2nES9fYBJX410JYuW');
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
