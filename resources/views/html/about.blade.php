@@ -3,12 +3,7 @@
 @section('description','经典星空，蕴藏无尽语录，记载璀璨人生，一字一句皆经典，一分沉吟传天下，泽被后世永流传...')
 @section('keywords','关于 规则 介绍 经典 星空 无尽 语录 璀璨 人生 字 句 沉吟 天下 流传 后世')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all">
-    <!--必要样式-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/component.css') }}">
-    <script type="text/javascript" src="{{ asset('js/modernizr.custom.js') }}"></script>
+
 @endsection
 @section('container')
    <div class="container about">
@@ -21,6 +16,9 @@
        <p>6、世界太大，人生苦短，终究难以经历所有精彩和不精彩。所以，您可以在此，稍稍品尝一下众多经典。若能让您稍有余味，小生心中便觉喜悦。</p>
        <p>7、世界在变，人生在变，经典也可能随之而变。所以，您不用担心，您的经典不经典。不经典，未尝不是一种永恒的经典。</p>
        <p>8、待续...</p>
+       <div class="qrcode">
+           <img src="/img/qrcode_for_jshy_small.jpg" title="扫描关注公众号"/>
+       </div>
    </div>
 @endsection
 @section('js')

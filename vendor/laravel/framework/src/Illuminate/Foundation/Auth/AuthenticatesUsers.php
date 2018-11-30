@@ -34,6 +34,9 @@ trait AuthenticatesUsers
     {
         $this->validate($request, [
             $this->loginUsername() => 'required', 'password' => 'required',
+        ],[
+            $this->loginUsername().'.required'=>'请输入登录名',
+            'password.required'=>'密码不能为空',
         ]);
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -102,9 +105,10 @@ trait AuthenticatesUsers
      */
     protected function getFailedLoginMessage()
     {
-        return Lang::has('auth.failed')
-                ? Lang::get('auth.failed')
-                : 'These credentials do not match our records.';
+//        return Lang::has('auth.failed')
+//                ? Lang::get('auth.failed')
+//                : 'These credentials do not match our records.';
+        return "用户名或密码错误";
     }
 
     /**

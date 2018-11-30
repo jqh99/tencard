@@ -1,6 +1,16 @@
 html,body{ 
 	width:100%;
 	height:100%;
+    font-size: 100%;
+}
+h4, h5, h6,
+h1, h2, h3 {margin-top: 0;}
+ul, ol {margin: 0;}
+p {margin: 0;}
+html, body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    background:#fff;
 }
 
 canvas{
@@ -207,3 +217,4 @@ canvas{
 .detail_legend {text-align: right;height:30px; margin-top: 20px;position:fixed; top:50px;right:0px;}
 .about{background: url(../images/d-top.jpg)0px 0px;margin-top: 30px;padding: 30px;}
 .about p{line-height: 1.5em;font-size: 1em;letter-spacing: 0.2em;color: #0c3913;}
+.about .qrcode{text-align: center;}

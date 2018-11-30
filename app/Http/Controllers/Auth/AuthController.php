@@ -44,8 +44,16 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|unique:user,name|max:255',
+            'username' => 'required|unique:user,username|max:255',
             'password' => 'required|confirmed|min:6',
+        ],
+            [
+                'username.required'=>'用户名作为登录凭证，必须填写',
+                'username.unique'=>'该用户名已经被注册',
+                'username.max'=>'用户名长度不能超过255位',
+                'password.required'=>'密码必填',
+                'password.confirmed'=>'确认密码必须和密码保持一致',
+                'password.min'=>'为了安全考虑，密码长度不能低于6位'
         ]);
     }
 

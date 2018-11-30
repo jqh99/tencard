@@ -19,6 +19,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.mobile.css') }}" />
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}">
     @section('css')
     @show
 </head>

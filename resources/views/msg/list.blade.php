@@ -11,7 +11,7 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Custom Theme files -->
     <link href="{{ asset('css/stylelist.css') }}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ asset('css/hover.css') }}" rel="stylesheet" media="all">
+
 @endsection
 @section('container')
     <!--info-grid start here-->
