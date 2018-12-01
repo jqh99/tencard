@@ -211,10 +211,11 @@ canvas{
         background-color: #2e352b;
         color: #fff;
     }
+    .detail_legend {z-index:10;}
 }
 /*头部导航样式*/
 .legend {text-align: center;height:30px; margin-top: 20px;}
-.detail_legend {text-align: right;height:30px; margin-top: 20px;position:fixed; top:50px;right:0px;}
+.detail_legend {text-align: right;height:30px; margin-top: 20px;position:fixed; top:49px;left:0px;z-index:101;}
 .about{background: url(../images/d-top.jpg)0px 0px;margin-top: 30px;padding: 30px;}
 .about p{line-height: 1.5em;font-size: 1em;letter-spacing: 0.2em;color: #0c3913;}
 .about .qrcode{text-align: center;}
