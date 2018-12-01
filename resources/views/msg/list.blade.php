@@ -40,7 +40,7 @@
         });
 
         $(window).bind('scroll', function () {//监控滚动条 到最底部时请求数据
-            if ($(document).scrollTop() == $(document).height() - $(window).height()) {
+            if ($(document).scrollTop() == $(document).height() - $(window).height()-5) {
                 page++;
                 ajaxRead();
             }

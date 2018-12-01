@@ -13,38 +13,13 @@
         <section class="grid-wrap">
             <ul class="grid" style="position: relative;">
                 <li class="grid-sizer" style="position: absolute; left: 0px; top: 0px;"></li><!-- for Masonry column width -->
-                @foreach($cards as $k=>$item)
-                <li style="position: absolute; left: {{ $k*268 }}px; top: 0px;">
-                    <figure>
-                        <figcaption>
-                            <h3>@if($item->like_count >= 100)<span class="red">经典</span>@endif语录——<span class="weibai">{{ $item->name }}</span></h3>
-                            <p>{{ str_limit($item->content,50) }}</p>
-                        </figcaption>
-                    </figure>
-                </li>
-                @endforeach
+
             </ul>
         </section><!-- // grid-wrap -->
         <section class="slideshow">
+            <input type="hidden" id="touser" value="">
             <ul>
-                @foreach($cards as $k=>$item)
-                <li>
-                    <figure>
-                        <div class="info-top">
-                            <h3> @if($item->like_count >= 100)<span class="blue">经典永流传</span> @endif <a class="like layui-btn layui-btn-warm" style="cursor: pointer;" data-id="{{ $item->id }}" data-like="{{ $item->like_count }}">为Ta点赞（{{ $item->like_count }}）</a> <button class="sendmsg layui-btn layui-btn-normal" style="cursor: pointer;" data-userid="{{ $item->user_id }}" data-username="{{ $item->name }}">私信Ta</button></h3>
-                        </div>
-                        <figcaption>
-                            <p>{{ $item->content }}</p>
-                        </figcaption>
-                        <div class="info-bottom">
-                            <p>——{{ $item->name }}</p>
-                        </div>
-                        <br/>
-                        <input type="hidden" id="touser" value="">
-                        {{--<img src="/img/1(1).png" alt="img{{ $k }}">--}}
-                    </figure>
-                </li>
-                @endforeach
+
             </ul>
             <nav>
                 <span class="icon nav-prev"></span>
@@ -132,5 +107,81 @@
             });
         });
 
+        var page = 0;//分页页码
+        $(function () {
+            page = 1;
+            ajaxRead();
+        });
+        $(window).bind('scroll', function () {//监控滚动条 到最底部时请求数据
+            if ($(document).scrollTop() == $(document).height() - $(window).height()-5) {
+                page++;
+                ajaxRead();
+            }
+        });
+
+        //请求数据
+        function ajaxRead() {
+            var html = "";
+            var html_slide = "";
+            var url = "/index/getlist";
+            var data = {'p': page,'size':12};
+            var index;
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: url,
+                data: data,
+                beforeSend: function () {
+                    //loading层
+                    index = layer.load(1, {
+                        shade: [0.1, '#fff'], //0.1透明度的白色背景
+                        time:500
+                    });
+                },
+                success: function (data) {
+                    layer.close(index);
+                    // data =JSON.parse(data);
+                    if (data.status == 0) {
+                        layer.msg(data.msg,{time:500});
+                    } else {
+                        $.each(data.data, function (i, item) {
+                            //遍历传来的数据 拼接html
+                            html += '<li style="position: absolute; left: '+ i*268 +'px; top: 0px;">';
+                            html += '<figure>';
+                            html += '<figcaption>';
+                            html += '<h3>';
+                            if(item.like_count >= 100){
+                                html += '<span class="red">经典</span>';
+                            }
+                            html += '语录——<span class="weibai">'+item.name+'</span></h3>';
+                            html += '<p>'+item.short_content+'</p>';
+                            html += '</figcaption>';
+                            html += '</figure>';
+                            html += '</li>';
+                            html_slide += '<li>';
+                            html_slide += '<figure>';
+                            html_slide += '<div class="info-top">';
+                            html_slide += '<h3>';
+                            if(item.like_count >= 100){
+                                html_slide += '<span class="blue">经典永流传</span> ';
+                            }
+                            html_slide += '<a class="like layui-btn layui-btn-warm" style="cursor: pointer;" data-id="'+item.id+'" data-like="'+item.like_count+'">为Ta点赞（'+item.like_count+'）</a> <button class="sendmsg layui-btn layui-btn-normal" style="cursor: pointer;" data-userid="'+item.user_id+'" data-username="'+item.name+'">私信Ta</button></h3>';
+                            html_slide += '</div>';
+                            html_slide += '<figcaption>';
+                            html_slide += '<p>'+item.content+'</p>';
+                            html_slide += '</figcaption>';
+                            html_slide += '<div class="info-bottom">';
+                            html_slide += '<p>——'+item.name+'</p>';
+                            html_slide += '</div>';
+                            html_slide += '<br/>';
+                            html_slide += '</figure>';
+                            html_slide += '</li>';
+                        });
+                        $("ul.grid").append($(html));//写入页面
+                        $(".slideshow ul").append($(html_slide));//写入页面
+                    }
+                },
+            });
+        }
     </script>
 @endsection

@@ -19,7 +19,7 @@
             <a href="/" @if(request()->path() == '/') class="actived" @endif>经典星空</a>
         </li>
         <li>
-            <a href="/card/list" @if(strstr(request()->path(), 'card/list')) class="actived" @endif>我的经典</a>
+            <a href="/card/list" @if(strstr(request()->path(), 'card/list') || strstr(request()->path(), 'card/add')) class="actived" @endif>我的经典</a>
         </li>
         <li>
             <a href="/msg/list" @if(strstr(request()->path(), 'msg/list') || strstr(request()->path(), 'msg/detail')) class="actived" @endif>我的私信</a>

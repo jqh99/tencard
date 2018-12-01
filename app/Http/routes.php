@@ -12,6 +12,7 @@
 */
 
 Route::get('/','IndexController@index');
+Route::post('/index/getlist','IndexController@getIndexList');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
