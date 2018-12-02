@@ -64,11 +64,12 @@
 .grid figcaption {
 	/*background: #e4e4e4;*/
 	padding: 25px;
-	background: url(../images/d-top.jpg)0px 0px;
+	/*background: url(../images/d-top.jpg)0px 0px;*/
 	/*padding: 1em 1em;*/
 	/*text-align: center;*/
 	font-family: "楷体","楷体_GB2312";
-	color:#2d2d2d;
+	color: #8ffd0b;
+	border: 1px dashed #8ffd0b;
 }
 
 

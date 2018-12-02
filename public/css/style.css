@@ -1,8 +1,3 @@
-html,body{ 
-	width:100%;
-	height:100%;
-    font-size: 100%;
-}
 h4, h5, h6,
 h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
@@ -11,7 +6,8 @@ html, body{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
     background:#fff;
-    height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 canvas{
@@ -58,9 +54,10 @@ canvas{
 
 #particles-js{
 	width: 100%;
-	/*height: 100%;*/
+	height: 100%;
 	position: relative;
-	background-image: url(../img/bg.jpg);
+	/*background-image: url(../img/bg.jpg);*/
+    background: black;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -213,10 +210,12 @@ canvas{
         color: #fff;
     }
     .detail_legend {z-index:10;}
+
 }
 /*头部导航样式*/
 .legend {text-align: center;height:30px; margin-top: 20px;}
 .detail_legend {text-align: right;height:30px; margin-top: 20px;position:fixed; top:49px;left:0px;z-index:101;}
-.about{background: url(../images/d-top.jpg)0px 0px;margin-top: 30px;padding: 30px;}
-.about p{line-height: 1.5em;font-size: 1em;letter-spacing: 0.2em;color: #0c3913;}
+.about{margin-top: 30px;padding: 30px;}
+.about h3{color: #23e241;margin-bottom: 30px;}
+.about p{line-height: 1.5em;font-size: 1em;letter-spacing: 0.2em;color: #23e241;}
 .about .qrcode{text-align: center;}

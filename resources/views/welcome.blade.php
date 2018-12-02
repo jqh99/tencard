@@ -147,11 +147,11 @@
                             html += '<li style="">';
                             html += '<figure>';
                             html += '<figcaption>';
-                            html += '<h3>';
+                            html += '<h3><span class="weibai">'+item.name+'</span>[';
                             if(item.like_count >= 100){
                                 html += '<span class="red">经典</span>';
                             }
-                            html += '语录——<span class="weibai">'+item.name+'</span></h3>';
+                            html += '语录]</h3>';
                             html += '<p>'+item.short_content+'</p>';
                             html += '</figcaption>';
                             html += '</figure>';
