@@ -146,7 +146,8 @@
                     } else {
                         $.each(data.data, function (i, item) {
                             //遍历传来的数据 拼接html
-                            html += '<li style="position: absolute; left: '+ i*268 +'px; top: 0px;">';
+                            // html += '<li style="position: absolute; left: '+ i*268 +'px; top: 0px;">';
+                            html += '<li style="">';
                             html += '<figure>';
                             html += '<figcaption>';
                             html += '<h3>';
