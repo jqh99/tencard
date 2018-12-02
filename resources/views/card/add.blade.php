@@ -4,9 +4,17 @@
 @section('keywords','经典 星空 无尽 语录 璀璨 人生 字 句 沉吟 天下 流传 后世')
 @section('css')
     <link rel="stylesheet" media="screen" href="{{ asset('css/stylecard.css') }}">
+    <style type="text/css">
+        body{background: none;}
+    </style>
 @endsection
 @section('container')
-    <div class="login-01">
+    <div class="container">
+        <div class="legend">
+            <a class="layui-btn layui-btn-warm" href="javascript:;">创我经典</a>
+        </div>
+    </div>
+    <div class="login-01" style="padding-top: 15px;">
         <form method="post" action="/card/add">
             {!! csrf_field() !!}
             <ul>

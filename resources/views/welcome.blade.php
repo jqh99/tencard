@@ -35,9 +35,6 @@
     <script type="text/javascript" src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/classie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/cbpGridGallery.js') }}"></script>
-    <script type="text/javascript">
-
-    </script>
     <script src="{{ asset('js/layer.js') }}"></script>
     <script type="text/javascript">
         $.ajaxSetup({

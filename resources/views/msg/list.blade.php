@@ -11,7 +11,9 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Custom Theme files -->
     <link href="{{ asset('css/stylelist.css') }}" rel="stylesheet" type="text/css" media="all">
-
+    <style type="text/css">
+        body{background: none;}
+    </style>
 @endsection
 @section('container')
     <!--info-grid start here-->
