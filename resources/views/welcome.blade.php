@@ -36,7 +36,7 @@
     <script type="text/javascript" src="{{ asset('js/classie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/cbpGridGallery.js') }}"></script>
     <script type="text/javascript">
-        new CBPGridGallery(document.getElementById('grid-gallery'));
+
     </script>
     <script src="{{ asset('js/layer.js') }}"></script>
     <script type="text/javascript">
@@ -180,6 +180,7 @@
                         });
                         $("ul.grid").append($(html));//写入页面
                         $(".slideshow ul").append($(html_slide));//写入页面
+                        new CBPGridGallery(document.getElementById('grid-gallery'));
                     }
                 },
             });
