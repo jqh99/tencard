@@ -12,11 +12,13 @@
 
 @endsection
 @section('container')
+    @if($count < 10)
     <div class="container">
         <div class="legend">
             <a class="layui-btn layui-btn-warm" href="/card/add">创我经典</a>
         </div>
     </div>
+    @endif
     <!--info-grid start here-->
     <div class="info-grid wow bounce animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: bounce;">
         <div class="container">

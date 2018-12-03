@@ -19,6 +19,11 @@ class CardController extends Controller
 
     public function saveCard(){
         $content = request()->get('content');
+        $count = DB::table('card')->where('user_id',request()->user()->id)->count();
+        if($count >=10){
+            echo '<script>alert("经典在精不在多，所以，每个用户限定十大经典！");location.href="/card/list";</script>';
+            die;
+        }
         $id = DB::table('card')->insertGetId([
            'user_id'=>request()->user()->id,
            'content'=>$content,
@@ -33,9 +38,11 @@ class CardController extends Controller
     }
 
     public function cardList(){
+        $count = DB::table('card')->where('user_id',request()->user()->id)->count();
         $cards = DB::table('card')->where('user_id',request()->user()->id)->orderBy('id','desc')->get();
         return view('card/list',[
-            'cards'=>$cards
+            'cards'=>$cards,
+            'count'=>$count
         ]);
     }
 
