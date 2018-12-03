@@ -148,9 +148,9 @@
                             html += '<figure>';
                             html += '<figcaption>';
                             html += '<h3><span class="weibai">'+item.name+'</span>[';
-                            if(item.like_count >= 100){
-                                html += '<span class="red">经典</span>';
-                            }
+                            // if(item.like_count >= 100){
+                            //     html += '<span class="red">经典</span>';
+                            // }
                             html += '语录]</h3>';
                             html += '<p>'+item.short_content+'</p>';
                             html += '</figcaption>';
@@ -160,9 +160,9 @@
                             html_slide += '<figure>';
                             html_slide += '<div class="info-top">';
                             html_slide += '<h3>';
-                            if(item.like_count >= 100){
-                                html_slide += '<span class="blue">经典永流传</span> ';
-                            }
+                            // if(item.like_count >= 100){
+                            //     html_slide += '<span class="blue">经典永流传</span> ';
+                            // }
                             html_slide += '<a class="like layui-btn layui-btn-warm" style="cursor: pointer;" data-id="'+item.id+'" data-like="'+item.like_count+'">为Ta点赞（'+item.like_count+'）</a> <button class="sendmsg layui-btn layui-btn-normal" style="cursor: pointer;" data-userid="'+item.user_id+'" data-username="'+item.name+'">私信Ta</button></h3>';
                             html_slide += '</div>';
                             html_slide += '<figcaption>';
