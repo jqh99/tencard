@@ -21,7 +21,7 @@
         <div class="container" id="msgs">
             <div class="info-grid-main">
 
-                <div class="clearfix"> </div>
+                <div class="cli"> </div>
             </div>
             <input type="hidden" id="touser" value="">
         </div>
@@ -42,8 +42,7 @@
         });
 
         $(window).bind('scroll', function () {//监控滚动条 到最底部时请求数据
-            if ($(document).scrollTop() == $(document).height() - $(window).height()-5) {
-                page++;
+            if ($(document).scrollTop() == $(document).height() - $(window).height()) {
                 ajaxRead();
             }
         });
@@ -84,6 +83,7 @@
                             html += '</div>';
                         });
                         $(".info-grid-main").append($(html));//写入页面
+                        page++;
                     }
                 },
             });

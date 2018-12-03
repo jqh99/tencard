@@ -223,3 +223,4 @@ canvas{
 .about h3{color: #23e241;margin-bottom: 30px;}
 .about p{line-height: 1.5em;font-size: 1em;letter-spacing: 0.2em;color: #23e241;}
 .about .qrcode{text-align: center;}
+.main{ width:100%;height: 100%;background: black;}

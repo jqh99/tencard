@@ -43,7 +43,6 @@
         </form>
     </div>
     </div>
-    <div class="sk-rotating-plane"></div>
 @endsection
 @section('js')
     <script type="text/javascript">

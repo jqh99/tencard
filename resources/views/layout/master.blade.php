@@ -20,19 +20,25 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.mobile.css') }}" />
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" media="screen" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}">
     @section('css')
     @show
 </head>
 <body>
-<div id="particles-js">
+{{--<div id="particles-js"></div>--}}
+<div class="main">
     @include('public/header')
     @section('container')
     @show
     @include('public/footer')
+    <div class="cli"></div>
 </div>
-<script src="{{ asset('js/particles.min.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+
+
+{{--<script src="{{ asset('js/particles.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/app.js') }}"></script>--}}
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script>
     $(function() {
@@ -40,7 +46,8 @@
             $(".nav ul li a").removeClass("actived");
             $(this).children("a").addClass("actived");
         });
-        $("#particles-js").css('min-height',$(window).height()+'px');
+        // $("#particles-js").css('min-height',$(window).height()+'px');
+        $(".main").css('min-height',$(window).height()+'px');
     });
     $(".nav img").click(function() {//显示或隐藏下方导航列表
         $(".nav ul").slideToggle(100);

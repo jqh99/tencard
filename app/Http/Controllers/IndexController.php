@@ -29,7 +29,7 @@ class IndexController extends Controller
             $cards = DB::table('card as c')
                 ->select('c.*','u.name')
                 ->join('user as u','u.id','=','c.user_id')
-                ->orderBy('c.id','desc')
+                ->orderBy('c.create_time','desc')
                 ->skip(($p-1)*$size)
                 ->take($size)
                 ->get();

@@ -28,6 +28,7 @@
             </nav>
             <div class="info-keys icon">Navigate with arrow keys</div>
         </section><!-- // slideshow -->
+        <div class="cli"> </div>
     </div><!-- // grid-gallery -->
 @endsection
 @section('js')
@@ -110,8 +111,7 @@
             ajaxRead();
         });
         $(window).bind('scroll', function () {//监控滚动条 到最底部时请求数据
-            if ($(document).scrollTop() == $(document).height() - $(window).height()-5) {
-                page++;
+            if ($(document).scrollTop() == $(document).height() - $(window).height()) {
                 ajaxRead();
             }
         });
@@ -121,7 +121,7 @@
             var html = "";
             var html_slide = "";
             var url = "/index/getlist";
-            var data = {'p': page,'size':12};
+            var data = {'p': page,'size':20};
             var index;
             $.ajax({
                 type: 'post',
@@ -178,6 +178,10 @@
                         $("ul.grid").append($(html));//写入页面
                         $(".slideshow ul").append($(html_slide));//写入页面
                         new CBPGridGallery(document.getElementById('grid-gallery'));
+                        page++;
+                        var mainheight = $('.head').height()+$('.nav').height()+$('.foot').height()+$('.grid-gallery').height();
+                        console.log(mainheight);
+                        $("#particles-js").css('height',mainheight+'px');
                     }
                 },
             });
