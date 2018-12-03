@@ -71,10 +71,10 @@
             var docW = window.screen.width;
             if(docW < 1920){
                 var layerW = '80%';
-                var layerH = '70%';
+                var layerH = '60%';
             }else{
                 var layerW = '500px';
-                var layerH = '500px';
+                var layerH = '350px';
             }
             var id=$(this).attr('data-userid');
             $("#touser").val(id);

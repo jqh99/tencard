@@ -115,7 +115,7 @@
             var docW = window.screen.width;
             if(docW < 1920){
                 var layerW = '80%';
-                var layerH = '45%';
+                var layerH = '60%';
             }else{
                 var layerW = '500px';
                 var layerH = '350px';
