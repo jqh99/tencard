@@ -99,7 +99,7 @@ li.second:hover .msg {
 }
 /*-----*/
 input[type="text"],form textarea {
-  width: 77%;
+  width: 100%;
   padding: 1.13em 1em 1.13em 1em;
   color: #858282;
   font-size: 16px;
@@ -108,14 +108,7 @@ input[type="text"],form textarea {
   font-weight: 500;
   border: none;
   font-family: 'Lora', serif;
-  border-top-right-radius: 0.3em;
-  -o-border-top-right-radius: 0.3em;
-  -moz-border-top-right-radius: 0.3em;
-  -webkit-border-top-right-radius: 0.3em;
-  border-border-bottom-right-radius: 0.3em;
-  -o-border-bottom-right-radius: 0.3em;
-  -moz-border-bottom-right-radius: 0.3em;
-  -webkit-border-bottom-right-radius: 0.3em;
+    border-radius: 0.3em;
   }
   .submit{
 
@@ -251,7 +244,7 @@ li.lost {
     font-size: 0.9em;
   }
    input[type="text"], form textarea {
-  width: 77%;
+  width: 90%;
   padding: 1em 1em 1em 1em;
   font-size: 15px;
   }
@@ -302,7 +295,7 @@ form li.first, li.second {
 }
 @media (max-width:320px){
   input[type="text"], form textarea {
- width: 71%;
+ width: 90%;
   padding: 1em 1em 1em 0.8em;
   font-size: 14px;
   }

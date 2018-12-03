@@ -15,7 +15,7 @@
             <input type="hidden" id="to_user" name="to_user" />
             <ul>
                 <li class="second">
-                    <a href="javascript:;" class=" icon msg"></a>
+                    {{--<a href="javascript:;" class=" icon msg"></a>--}}
                     <textarea name="content" required="required"></textarea>
                     <div class="clear"></div>
                 </li>

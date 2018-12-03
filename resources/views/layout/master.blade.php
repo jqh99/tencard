@@ -40,6 +40,7 @@
             $(".nav ul li a").removeClass("actived");
             $(this).children("a").addClass("actived");
         });
+        $("#particles-js").css('min-height',$(window).height()+'px');
     });
     $(".nav img").click(function() {//显示或隐藏下方导航列表
         $(".nav ul").slideToggle(100);

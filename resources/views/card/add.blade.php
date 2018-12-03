@@ -19,7 +19,8 @@
             {!! csrf_field() !!}
             <ul>
                 <li class="second">
-                    <a href="javascript:;" class=" icon user"></a><textarea name="content"></textarea>
+                    {{--<a href="javascript:;" class=" icon user"></a>--}}
+                    <textarea name="content"></textarea>
                     <div class="clear"></div>
                 </li>
             </ul>
